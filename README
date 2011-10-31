@@ -1,0 +1,3 @@
+The localStorage object in modern browsers is a super useful tool for persisting local data, but debugging it is a pain and it's hard to know what's being stored on your machine.
+
+I made a small bookmarklet that lets you inspect and clear data from a domain's localStorage.

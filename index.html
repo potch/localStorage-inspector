@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The localStorage inspector bookmarklet</title>
+  </head>
+  <body>
+    <h1>The localStorage inspector bookmarklet</h1>
+    <p>The localStorage object in modern browsers is a super useful tool for persisting local data, but debugging it is a pain, and it's hard to know what's being stored on your machine. I made a small bookmarklet that lets you inspect and clear data from a domain's localStorage.</p>
+    <p>Try it out on this page by clicking this link- 
+      <a href='javascript:(function(){function k(a,b){b=a.target,a.preventDefault();var d=b.getAttribute("data-k");switch(b.className){case"c":h.removeItem(d),j();break;case"v":b.parentNode.innerHTML="<pre>"+h[d]+"</pre>";break;case"ca":h.clear(),j();break;case"x":c.style.display="none"}}function j(){e=i+"<th colspan=3><h1>localStorage inspector</h1><th><a href=\"#\" class=\"x\">close</a><tr><th>storage key<th>size<th><th><a href=\"#\" class=\"ca\">clear all</a>";for(var a=0;a<h.length;a++)g=h.key(a),e+=("<tr><td>$<td>"+h[g].length+"<td><a href=\"#\" data-k=\"$\"class=\"v\">view</a><td><a href=\"#\" data-k=\"$\"class=\"c\">clear</a>").replace(/\$/g,g);c.innerHTML=e}var a=document,b="localStorageList",c=a.getElementById(b),d,e,f,g,h=window.localStorage,i="<style>$ th, $ td {padding:0 1em;text-align:left;}$ th{font-weight:bold}$ pre{max-width:400px;max-height:300px;overflow:auto;white-space:pre-wrap;}$ h1 {font-size:16px}</style>".replace(/\$/g,"#"+b);c||(c=a.createElement("table"),a.body.appendChild(c),c.addEventListener("click",k,!1)),c.setAttribute("id",b),c.setAttribute("style","position:fixed;top:20px;right:20px;padding:20px;background:#fff;width:auto;font:12px/20px monospace;z-index:99999;max-height:100%;overflow:auto;border-radius:10px;border:2px solid #000"),c.style.display="block",j()})()'>localStorage inspector</a>.
+      There is some sample data you can inspect on this page. If you like it, simply bookmark that link, and use it on any page.
+    </p>
+    <p>Hope it helps!</p>
+    <script>
+      localStorage['test'] = 'this is a test';
+      localStorage['foo'] = 'bar';
+    </script>
+  </body>
+</html>

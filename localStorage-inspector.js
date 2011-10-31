@@ -16,13 +16,13 @@
         s += ls.length ? "" : "<tr><td>No Data";
         for (i=0;i<ls.length;i++) {
             k = ls.key(i);
-            s += ("<tr><td>$<td>" + ls[k].length + "<td><a href=# data-k=$class=lv>view</a><td><a href=# data-k=$class=lc>clear</a>").replace(/\$/g,k);
+            s += ("<tr><td>$<td>" + ls[k].length + "<td><a href=# data-k=\"$\" class=lv>view</a><td><a href=# data-k=\"$\" class=lc>clear</a>").replace(/\$/g,k);
         }
         s += "<tr><th colspan=3><h1>sessionStorage</h1><tr><th>storage key<th>size<th><th><a href=# class=sca>clear all</a>";
         s += ss.length ? "" : "<tr><td>No Data";
         for (i=0;i<ss.length;i++) {
             k = ss.key(i);
-            s += ("<tr><td>$<td>" + ss[k].length + "<td><a href=# data-k=$class=sv>view</a><td><a href=# data-k=$class=sc>clear</a>").replace(/\$/g,k);
+            s += ("<tr><td>$<td>" + ss[k].length + "<td><a href=# data-k=\"$\" class=sv>view</a><td><a href=# data-k=\"$\" class=sc>clear</a>").replace(/\$/g,k);
         }
         el.innerHTML = s;
     }
